@@ -18,4 +18,4 @@ jobs:
     - name: Run tests
       run: |
         # Using python3 -m pytest is more reliable on self-hosted runners
-        python3 -m pytest src/addition.py
+        python3 -m pytest -s src/addition.py
