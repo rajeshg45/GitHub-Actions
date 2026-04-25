@@ -6,24 +6,13 @@ jobs:
   build:
     runs-on: self-hosted
 
-    strategy:
-      matrix:
-        # 3.12 is native to Ubuntu 24.04
-        # 3.10 and 3.11 can be easily added
-        python-version: [3.10, 3.12] 
-
-
+    # Remove the strategy/matrix for now to simplify
     steps:
     - uses: actions/checkout@v3
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v5
-      with:
-        python-version: ${{ matrix.python-version }}
 
+    # We skip 'actions/setup-python' and use the EC2's native Python 3
     - name: Install dependencies
       run: |
-        # Use 'python' if setup-python is successful, 
-        # but 'python3' is safer on Ubuntu self-hosted
         python3 -m pip install --upgrade pip
         python3 -m pip install pytest
 
