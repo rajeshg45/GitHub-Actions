@@ -12,7 +12,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        python3 -m pip install --upgrade pip --break-system-packages
+        # Skip upgrading pip to save time; install pytest directly
         python3 -m pip install pytest --break-system-packages
 
     - name: Run tests
