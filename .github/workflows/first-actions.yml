@@ -12,9 +12,9 @@ jobs:
 
     # We skip 'actions/setup-python' and use the EC2's native Python  3
     - name: Install dependencies
-      run: |
-        python3 -m pip install --upgrade pip
-        python3 -m pip install pytest
+      run:
+        python3 -m pip install --upgrade pip --break-system-packages
+        python3 -m pip install pytest --break-system-packages
 
     - name: Run tests
       run: |
