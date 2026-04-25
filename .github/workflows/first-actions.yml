@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    # We skip 'actions/setup-python' and use the EC2's native Python 3
+    # We skip 'actions/setup-python' and use the EC2's native Python  3
     - name: Install dependencies
       run: |
         python3 -m pip install --upgrade pip
